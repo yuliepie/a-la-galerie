@@ -17,10 +17,12 @@ const GallaryMain = () => {
   const imgs = useMemo(
     () =>
       imageURLs &&
+      queryKeyword &&
+      queryKeyword.current &&
       imageURLs.map((url, i) => (
         <img key={uuid()} src={url} alt={`${queryKeyword.current}--${i}`} />
       )),
-    [imageURLs]
+    [imageURLs, queryKeyword]
   );
 
   return <div>{imgs}</div>;
