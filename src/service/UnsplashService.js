@@ -1,15 +1,10 @@
 import { createApi } from "unsplash-js";
 
 class UnsplashService {
-  #ACCESS_KEY;
-  // #SECRET;
   #instance;
   constructor() {
-    this.#ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
-    // this.#SECRET = process.env.UNSPLASH_SECRET;
-
     this.#instance = createApi({
-      accessKey: this.#ACCESS_KEY,
+      accessKey: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
     });
   }
 
@@ -19,7 +14,7 @@ class UnsplashService {
     }
 
     try {
-      const { response, status } = await this.#instance.search.getPhotos(query);
+      const { response, status } = await this.#instance.search.getPhotos({ query });
       return { urls: response?.results.map(result => result.urls.regular), status };
     } catch (err) {
       console.error(err);
