@@ -11,4 +11,6 @@ npm start
 ```
 
 ## 공부 내용 및 참고 사항 -> 노션 페이지
-[노션 페이지 바로 가기][https://www.notion.so/la-galarie-ce60bf7733114fb982f72a9916392790]
+[노션 페이지 바로 가기][notion-page-redirect]
+
+[notion-page-redirect]: https://www.notion.so/la-galarie-ce60bf7733114fb982f72a9916392790
