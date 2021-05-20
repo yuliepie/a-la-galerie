@@ -1,12 +1,12 @@
 import React from "react";
-import GalaryMain from "./container/GalaryMain";
+import GallaryMain from "./container/GallaryMain";
 
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <GalaryMain />
+      <GallaryMain />
     </div>
   );
 };
