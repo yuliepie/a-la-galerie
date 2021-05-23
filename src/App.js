@@ -1,12 +1,14 @@
 import React from "react";
-import GallaryMain from "./container/GallaryMain";
+import Nav from "./component/nav/Nav";
+import Gallery from "./container/Gallery";
 
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <GallaryMain />
+      <Nav />
+      <Gallery />
     </div>
   );
 };

@@ -18,15 +18,20 @@ class UnsplashService {
    * query 로 검색해서 사진들을 가져옴
    * @param {string} query 찾을 사진들의 키워드 e.g. "office", "dog", "foods"
    * @returns 사진들의 url array
+   * https://unsplash.com/documentation#search-photos
    */
-  async getPhotoURLs(query) {
+  async getPhotoURLs(query, page = 1, perPage = 3) {
     if (typeof query !== "string") {
       throw new Error("Query is supposed to be the type of string!");
     }
 
     try {
-      const { response, status } = await this.#instance.search.getPhotos({ query });
-      console.log("Get Photo URLs status code : ", status);
+      const { response, status } = await this.#instance.search.getPhotos({
+        query,
+        page,
+        perPage,
+      });
+      console.log("Get Photo URLs status code : ", status, response);
       return response?.results.map(i => i.urls.regular);
     } catch (err) {
       console.error(err);
