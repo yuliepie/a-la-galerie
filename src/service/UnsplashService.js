@@ -17,6 +17,8 @@ class UnsplashService {
   /**
    * query 로 검색해서 사진들을 가져옴
    * @param {string} query 찾을 사진들의 키워드 e.g. "office", "dog", "foods"
+   * @param {number} page 가져온 페이지들 중 현재 페이지 인덱스
+   * @param {number} perPage 페이지 당 그림 갯수
    * @returns 사진들의 url array
    * https://unsplash.com/documentation#search-photos
    */
