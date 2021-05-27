@@ -2,18 +2,42 @@
   font-family: "Oleo Script", cursive;
   text-align: center;
 
-  background-color: rgb(131, 0, 0);
-  /* z-index: -1; */
-  /* background-image: url(https://previews.123rf.com/images/nuttakit/nuttakit1008/nuttakit100800092/7594246-gold-and-red-damask-style-wallpaper-pattern-background.jpg); */
+  background-color: rgb(105, 1, 1);
   color: #fff;
+
+  padding: 15px 0;
 }
 
 .Nav .title {
-  z-index: 1;
   font-size: 5rem;
 }
 
 .Nav .subtitle {
-  z-index: 1;
   font-size: 2.5rem;
+}
+
+.Nav .subtitle a {
+  color: hotpink;
+  font-size: 2.6rem;
+}
+
+.Nav .subtitle p {
+  display: inline;
+  font-size: 1.8rem;
+  color: #bbb;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Nav .title {
+    font-size: 5.5rem;
+  }
+
+  .Nav .subtitle a {
+    font-size: 3.1rem;
+  }
+
+  .Nav .subtitle p {
+    display: block;
+    font-size: 2.3rem;
+  }
 }

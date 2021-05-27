@@ -1,9 +1,16 @@
-import React from "react";
+import "./GalleryImage.css";
 
-const GalleryImage = ({ url, onClickImg, deleter }) => {
-  // props 는 자유롭게 받아서 하기!
-  // return <img ..... /> 같이
-  return <img src={url} alt={url} onClick={_ => onClickImg(deleter)} className="Gallary-image" />;
+import GalleryImageDetails from "./gallery-details/GalleryImageDetails";
+
+const GalleryImage = props => {
+  const { url } = props;
+
+  return (
+    <div className="Gallery__image-frame">
+      <img src={url} alt={url} className="Gallery__image" />
+      <GalleryImageDetails {...props} />
+    </div>
+  );
 };
 
 export default GalleryImage;
