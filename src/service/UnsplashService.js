@@ -8,6 +8,10 @@ class UnsplashService {
 
   constructor() {
     // init instance
+    // 각자 unsplash 에 접속해서 자신의 앱을 등록하세요.
+    if (!process.env.REACT_APP_UNSPLASH_ACCESS_KEY) {
+      throw new Error("No Access Key exists!");
+    }
     this.#instance = createApi({
       accessKey: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
     });
