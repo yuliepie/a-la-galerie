@@ -36,6 +36,7 @@ const Gallery = () => {
         makeRandomQueryKeyword(),
         randRange(1, 100)
       );
+      
       if (!response) {
         console.error("No valid response");
         return;
