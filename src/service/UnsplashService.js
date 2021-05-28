@@ -11,6 +11,10 @@ class UnsplashService {
     this.#instance = createApi({
       accessKey: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
     });
+
+    if (!this.#instance) {
+      throw new Error("no instance created!!");
+    }
   }
 
   /**
@@ -39,4 +43,5 @@ class UnsplashService {
   }
 }
 
+// export 로 instantiate -> 단 한 번만 instance 가 만들어지고, 이걸 계속 사용하게 된다.
 export default new UnsplashService();
