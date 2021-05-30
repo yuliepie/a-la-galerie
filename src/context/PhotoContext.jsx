@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 
 const init = {
-  photo: [
+  photos: [
     {
       id: "",
       title: "",
@@ -11,18 +11,15 @@ const init = {
       link: "",
     },
   ],
+  setPhotos: newPhotos => {},
 };
 
-const photoCtx = React.createContext(init);
+export const photoCtx = React.createContext(init);
 
 export const PhotoContextProviderWrapper = children => {
-  const [photo, setPhoto] = useState(init);
+  const [photos, setPhotos] = useState(init);
 
-  return (
-    <photoCtx.Provider value={{ photo, setPhoto }}>
-      {children}
-    </photoCtx.Provider>
-  );
+  return <photoCtx.Provider value={{ photos, setPhotos }} {...children} />;
 };
 
 export const usePhotoContext = () => useContext(photoCtx);

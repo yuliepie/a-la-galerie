@@ -1,5 +1,7 @@
 import "./App.css";
 
+import { PhotoContextProviderWrapper } from "./context/PhotoContext";
+
 import Nav from "./component/nav/Nav";
 import Clock from "./component/clock/Clock";
 import Gallery from "./container/gallery/Gallery";
@@ -10,7 +12,9 @@ const App = () => {
     <div className="App">
       <Nav />
       <Clock />
-      <Gallery />
+      <PhotoContextProviderWrapper>
+        <Gallery />
+      </PhotoContextProviderWrapper>
       <RedCarpet />
     </div>
   );

@@ -1,9 +1,9 @@
 import "./GalleryImageDetails.css";
 
 const GalleryImageDetails = props => {
-  const { title, author, description, link, onClickCard } = props;
+  const { title, author, description, link } = props;
   return (
-    <div onClick={onClickCard} className="Gallery__image-detail">
+    <div className="Gallery__image-detail">
       <h1>{title}</h1>
       <h2>{author}</h2>
       <a href={link} target="_blank" rel="noopener noreferrer">

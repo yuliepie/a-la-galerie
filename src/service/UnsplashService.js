@@ -31,6 +31,10 @@ class UnsplashService {
         page,
         perPage: 7,
       });
+
+      // 10000 / 7 = 1429
+
+      console.log(response);
       console.log("Get Photo URLs status code : ", status, response);
       return response;
     } catch (err) {
