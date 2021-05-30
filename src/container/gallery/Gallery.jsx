@@ -34,7 +34,7 @@ const Gallery = () => {
         }))
       );
     })();
-  }, []);
+  }, []); 
 
   const imgsJSX =
     photosCtx.photos &&
@@ -45,3 +45,5 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+

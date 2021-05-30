@@ -8,9 +8,17 @@ class UnsplashService {
 
   constructor() {
     // init instance
+    // 각자 unsplash 에 접속해서 자신의 앱을 등록하세요.
+    if (!process.env.REACT_APP_UNSPLASH_ACCESS_KEY) {
+      throw new Error("No Access Key exists!");
+    }
     this.#instance = createApi({
       accessKey: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
     });
+
+    if (!this.#instance) {
+      throw new Error("no instance created!!");
+    }
   }
 
   /**
@@ -43,4 +51,5 @@ class UnsplashService {
   }
 }
 
+// export 로 instantiate -> 단 한 번만 instance 가 만들어지고, 이걸 계속 사용하게 된다.
 export default new UnsplashService();
