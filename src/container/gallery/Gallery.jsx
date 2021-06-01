@@ -3,10 +3,11 @@ import "./Gallery.css";
 import { usePhotoContext } from "../../context/PhotoContext";
 
 import React, { useEffect } from "react";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import UnsplashService from "../../service/UnsplashService";
 import GalleryImage from "../../component/gallery-image/GalleryImage";
 import { makeRandomQueryKeyword, randRange } from "../../util/Common";
+import { useMemo } from "react";
 
 const Gallery = () => {
   const photosCtx = usePhotoContext();
@@ -34,16 +35,17 @@ const Gallery = () => {
         }))
       );
     })();
-  }, []); 
+  }, []);
 
-  const imgsJSX =
-    photosCtx.photos &&
-    photosCtx.photos.length > 1 &&
-    photosCtx.photos.map(photo => <GalleryImage key={photo.id} {...photo} />);
+  const imgsJSX = useMemo(
+    () =>
+      photosCtx.photos &&
+      photosCtx.photos.length > 1 &&
+      photosCtx.photos.map(photo => <GalleryImage key={photo.id} {...photo} />),
+    [photosCtx.photos]
+  );
 
   return <div className="Gallery">{imgsJSX}</div>;
 };
 
 export default Gallery;
-
-

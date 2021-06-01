@@ -8,8 +8,7 @@ const GalleryImage = props => {
   return (
     <div className="Gallery__image-frame">
       <img src={url} alt={url} className="Gallery__image" />
-      {/* 뭘 전달할까요? */}
-      {/* <GalleryImageDetails /> */}
+      <GalleryImageDetails {...props} />
     </div>
   );
 };

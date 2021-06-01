@@ -1,6 +1,7 @@
 import "./App.css";
 
 import { PhotoContextProviderWrapper } from "./context/PhotoContext";
+import { ClockContextProviderWrapper } from "./context/ClockContext";
 
 import Nav from "./component/nav/Nav";
 import Clock from "./component/clock/Clock";
@@ -11,7 +12,9 @@ const App = () => {
   return (
     <div className="App">
       <Nav />
-      <Clock />
+      <ClockContextProviderWrapper>
+        <Clock />
+      </ClockContextProviderWrapper>
       <PhotoContextProviderWrapper>
         <Gallery />
       </PhotoContextProviderWrapper>

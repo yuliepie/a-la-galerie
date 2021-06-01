@@ -14,7 +14,7 @@ const init = {
   setPhotos: newPhotos => {},
 };
 
-export const photoCtx = React.createContext(init);
+const photoCtx = React.createContext(init);
 
 export const PhotoContextProviderWrapper = children => {
   const [photos, setPhotos] = useState(init);
@@ -22,4 +22,10 @@ export const PhotoContextProviderWrapper = children => {
   return <photoCtx.Provider value={{ photos, setPhotos }} {...children} />;
 };
 
-export const usePhotoContext = () => useContext(photoCtx);
+export const usePhotoContext = () => {
+  const ctx = useContext(photoCtx);
+  if (!ctx) {
+    throw new Error("Photo context isn't valid! put a provider");
+  }
+  return ctx;
+};
