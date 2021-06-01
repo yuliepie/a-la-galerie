@@ -12,9 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <Nav />
-      <ClockContextProviderWrapper>
-        <Clock />
-      </ClockContextProviderWrapper>
+      <Clock />
       <PhotoContextProviderWrapper>
         <Gallery />
       </PhotoContextProviderWrapper>
